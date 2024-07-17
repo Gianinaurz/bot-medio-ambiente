@@ -1,0 +1,80 @@
+import discord
+import time
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot("", intents=intents)
+
+@bot.command()
+async def hola(ctx):
+    await ctx.send("Hola!")
+
+
+@bot.command()
+async def Reutilizar(ctx, left: str):
+
+    if left == "bolsas":
+        await ctx.send("Quieres saber como puedes reutilisar una bolsa?")
+        time.sleep(2)
+        await ctx.send("Aqui tienes unas sugerencias: Puedes hacer una cuerda uniendo bolsas. Puedes limpiar la bolsa y hacer un mantel para tu mesa. y por ultimo puedes cortar las bolsas y coserlas para hacer un impermeable.")
+    if left == "pilas":
+        await ctx.send("Lamentablemente no puedes reutilizar pilas, pero aqui tienes unas sugerencias: En los centros commerciales encontrares botes de basura especiales para pilas, tambien es buena idea usar pilas recargables que duran mas tiempo")
+    if left == "botellas":
+        await ctx.send("Quieres saber como puedes reutilizar una botella? Aca tienes algunas sugerencias.")
+        time.sleep(2)
+        await ctx.send("Puedes cortar la mitad y hacer vasos de plastico, usarlas para guardar pintura y comida, tambien sirven de macets para plantas. Otra alternativa es decorarlas y usarlas como alcancias")
+        time.sleep(2)
+        await ctx.send("Para manualidades puedes: Hacer una linterna casera, un carro de juguete, un mini arbol de navidad, un comedero para los pajaros, Y muchas cosas mas!")
+    if left == "carton":
+        await ctx.send("Quieres saber como puedes reutilizar carton? Aca te damos ideas.")
+        time.sleep(2)
+        await ctx.send("Puedes hacer cajones o decorar las y guardar cosas, las cajas mas pequeñas son excellentes para organizar materiales escolares, para los niños sirven mucho para los posters y otros projectos del colegio.")
+        time.sleep(2)
+        await ctx.send("Otra idea que te puede gustar, son los disfrases! con las cajas puedes hacer unos disfraces de robot una nave espacial y un bus escolar muy bonitos! ")
+    if left == "tapas":
+        await ctx.send("No sabes como reutilizar las tapas de las botellas? Aca te ayudamos con unas ideas.")
+        time.sleep(2)
+        await ctx.send("Puedes pegarlas y crear cosas como individuales, porta vasos, tapetes, y decoraciones con ayuda de dibujo  pixel. Sorprendentemente puedes crear cosas 3d como porta lapizes y bricolage")
+        time.sleep(2)
+        await ctx.send("Si no eres una persona muy manual siempre puedes llevarlas a los centros commerciales, donde encontraras botes de basura especiales para tapas! ")
+    if left == "cajas":
+        await ctx.send("Tienes cajas de madera y no sabes como reutilizarlas? Intenta una de estas ideas.")
+        time.sleep(2)
+        await ctx.send("Puedes colgarlas a la pared y ponerles fotos o decoraciones, tambien las puedes decorar y guardar cosas dentro")
+        time.sleep(2)
+        await ctx.send("si tienes mascotas la puedes adecuar como una cama para tu perro o gato, y si tienes niños puedes pintarlas y usarlas como butacas")
+    if left == "cosas":
+        await ctx.send("Aqui tienes cosas que puedes reutilizar")
+        time.sleep(1)
+        await ctx.send("Puedes reutilizar cepillos de dientes para limpieza de casa")
+        time.sleep(1)
+        await ctx.send("Puedes reutilizar periodicos viejos para limpiar espejos y ventanas")
+        time.sleep(1)
+        await ctx.send("Y tambien puedes utilizar restos de cafe como abono para plantas")
+    
+    else:
+        await ctx.send("No tengo informacion de ese material, prueba uno de estos: bolsas, pilas, botellas, carton, tapas, cajas, cosas")
+
+@bot.command()
+async def descomponer(ctx, left: str):
+    if left == "bolsa":
+        await ctx.send("se nescesitan 150 años para que un abolsa plastica se descomponga")
+    if left == "botella":
+        await ctx.send("una botella se descompone despues de 1,000 años")
+    if left == "toallas humedas":
+        await ctx.send("las toallitas humedas tardan 100 años en descomponer")
+    if left == "zapatilla":
+        await ctx.send("Las zapatillas tardan 200 años en descomponer")
+    if left == "vidrio":
+        await ctx.send("el vidrio tarda mas de 4000 años en descomponer")
+    if left == "pilas":
+        await ctx.send("las pilas tardan de 500 a 1000 años en descomponer")
+
+
+
+bot.run("token")
+
+
+
